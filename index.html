@@ -1,22 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jannimal Performance | BMW Tuning</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <label id="countLabel">0</label><br>
-    <div id="btnContainer">
-        <button id="decreaseBtn" class="buttons">decrease</button>
-        <button id="resetBtn" class="buttons">reset</button>
-        <button id="increaseBtn" class="buttons">increase</button>
-    </div>
-    
 
-    <script src="index.js"></script>
-    
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="logo">Jannimal <span>Performance</span></div>
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-page="home">Home</button>
+            <button class="tab-btn" data-page="work">Our Work</button>
+            <button class="tab-btn" data-page="schedule">Schedule</button>
+            <button class="tab-btn" data-page="payment">Payment</button>
+        </div>
+    </nav>
+
+    <!-- ===== HOME PAGE ===== -->
+    <div id="home" class="page active-page">
+        <div class="hero">
+            <h1>Built for <span>Speed</span></h1>
+            <p>BMW Downpipes • Intakes • Custom ECU Tuning</p>
+            <a href="#" onclick="switchToPage('schedule'); return false;" class="btn">
+                <i class="fas fa-calendar-alt"></i> Book Your Build
+            </a>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>What <span>We Do</span></h2>
+                <div class="sub">Performance parts and professional fitting for your BMW</div>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="icon">🔧</div>
+                    <h3>Downpipes</h3>
+                    <p>Catless or catted. More power, aggressive sound.</p>
+                    <a href="#" onclick="switchToPage('schedule'); return false;" class="btn-small">Get a Quote</a>
+                </div>
+                <div class="card">
+                    <div class="icon">🌬️</div>
+                    <h3>Cold Air Intakes</h3>
+                    <p>Increased airflow, better throttle response.</p>
+                    <a href="#" onclick="switchToPage('schedule'); return false;" class="btn-small">Get a Quote</a>
+                </div>
+                <div class="card">
+                    <div class="icon">💻</div>
+                    <h3>ECU Tuning</h3>
+                    <p>Custom dyno tuning. Unlock hidden horsepower.</p>
+                    <a href="#" onclick="switchToPage('schedule'); return false;" class="btn-small">Get a Quote</a>
+                </div>
+            </div>
+
+            <div class="contact-banner">
+                <h3>📞 Get a Custom Quote</h3>
+                <p>Every BMW build is different. Contact us for a personalized estimate.</p>
+                <p style="margin-top: 0.5rem;">
+                    <span class="email"><i class="fas fa-envelope"></i> info@jannimalperformance.com</span>
+                </p>
+                <a href="#" onclick="switchToPage('schedule'); return false;" class="btn" style="margin-top: 1rem; display: inline-flex;">
+                    <i class="fas fa-paper-plane"></i> Request a Quote
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== OUR WORK PAGE ===== -->
+    <div id="work" class="page">
+        <div class="section">
+            <div class="section-header">
+                <h2>Our <span>Work</span></h2>
+                <div class="sub">Recent builds and customer cars</div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <!-- Replace with your own image: <img src="images/build1.jpg" alt="M340i downpipe"> -->
+                        🏎️
+                    </div>
+                    <div class="gallery-caption">M340i – Catless Downpipe</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <!-- Replace with your own image: <img src="images/build2.jpg" alt="M4 intake"> -->
+                        🏁
+                    </div>
+                    <div class="gallery-caption">M4 – Eventuri Intake</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <!-- Replace with your own image: <img src="images/build3.jpg" alt="M2 tune"> -->
+                        ⚡
+                    </div>
+                    <div class="gallery-caption">M2 Competition – Stage 2 Tune</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <!-- Replace with your own image: <img src="images/build4.jpg" alt="540i exhaust"> -->
+                        🔧
+                    </div>
+                    <div class="gallery-caption">540i – Full Exhaust</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <!-- Replace with your own image: <img src="images/build5.jpg" alt="X5M downpipe"> -->
+                        💨
+                    </div>
+                    <div class="gallery-caption">X5M – Downpipe + Tune</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <!-- Replace with your own image: <img src="images/build6.jpg" alt="335i turbo"> -->
+                        🔥
+                    </div>
+                    <div class="gallery-caption">335i – Pure Turbo Upgrade</div>
+                </div>
+            </div>
+
+            <div class="contact-banner" style="margin-top: 2.5rem;">
+                <h3>👀 See Something You Like?</h3>
+                <p>Contact us for a quote on your BMW.</p>
+                <a href="#" onclick="switchToPage('schedule'); return false;" class="btn" style="margin-top: 1rem; display: inline-flex;">
+                    <i class="fas fa-paper-plane"></i> Request a Quote
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCHEDULE PAGE ===== -->
+    <div id="schedule" class="page">
+        <div class="section">
+            <div class="section-header">
+                <h2>Request a <span>Quote</span></h2>
+                <div class="sub">Tell us about your BMW and we'll get back to you within 24 hours.</div>
+            </div>
+            <div class="form-wrap">
+                <!-- Replace YOUR_FORM_ID with your actual Formspree ID -->
+                <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email *</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-car"></i> BMW Model *</label>
+                        <input type="text" id="car" name="car" placeholder="M340i, M4, X5M..." required />
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-wrench"></i> Service Needed *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="downpipe">Downpipe Installation</option>
+                            <option value="intake">Cold Air Intake</option>
+                            <option value="tune-stage1">ECU Tune – Stage 1</option>
+                            <option value="tune-stage2">ECU Tune – Stage 2</option>
+                            <option value="package">Full Bolt-On Package</option>
+                            <option value="other">Other (please describe below)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-comment"></i> Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your car, current mods, and what you want to achieve..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width:100%;justify-content:center;">
+                        <i class="fas fa-paper-plane"></i> Send Quote Request
+                    </button>
+                </form>
+                <div id="formSuccess" class="success" style="display:none;">
+                    <i class="fas fa-check-circle"></i> Thanks! We'll get back to you within 24 hours.
+                </div>
+                <p style="text-align:center; color:#666; font-size:0.85rem; margin-top:1rem;">
+                    <i class="fas fa-lock"></i> Your info is safe with us.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PAYMENT PAGE ===== -->
+    <div id="payment" class="page">
+        <div class="section">
+            <div class="section-header">
+                <h2>Payment <span>Options</span></h2>
+                <div class="sub">Simple and secure ways to pay</div>
+            </div>
+            <div class="payment-grid">
+                <div class="payment-card">
+                    <div class="icon">💵</div>
+                    <h3>Cash</h3>
+                    <p>Pay in person at pickup.</p>
+                    <div class="detail">Cash discount available</div>
+                </div>
+                <div class="payment-card">
+                    <div class="icon">📱</div>
+                    <h3>Zelle</h3>
+                    <p>Send to:</p>
+                    <div class="detail">info@jannimalperformance.com</div>
+                </div>
+                <div class="payment-card">
+                    <div class="icon">📷</div>
+                    <h3>Venmo</h3>
+                    <p>@JannimalPerformance</p>
+                    <div class="detail">Include car model in note</div>
+                </div>
+                <div class="payment-card">
+                    <div class="icon">💰</div>
+                    <h3>CashApp</h3>
+                    <p>$JannimalPerformance</p>
+                    <div class="detail">Instant transfer</div>
+                </div>
+            </div>
+
+            <div class="policy-box">
+                <div class="policy-row">
+                    <span>💰 Deposit Policy</span>
+                    <span>50% for parts over $500</span>
+                </div>
+                <div class="policy-row">
+                    <span>📋 Payment Due</span>
+                    <span>Upon completion</span>
+                </div>
+                <div class="policy-row">
+                    <span>📄 Receipts</span>
+                    <span>Provided for all transactions</span>
+                </div>
+            </div>
+            <div class="note">
+                <i class="fas fa-shield-alt"></i> All payments are secure and verified
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 Jannimal Performance &mdash; BMW Specialists &bull; Built for Speed</p>
+        <p style="margin-top:0.3rem;font-size:0.8rem;color:#444;">
+            <i class="fas fa-envelope"></i> info@jannimalperformance.com
+        </p>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
