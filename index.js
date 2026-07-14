@@ -149,6 +149,7 @@ if (form) {
     });
 }
 
+
 // ===== CONSOLE FLAIR =====
 console.log('%c🔥 Jannimal Performance | BMW Specialists', 'color:#2563eb;font-size:18px;font-weight:bold;');
 console.log('%c📧 info@jannimalperformance.com', 'color:#888;font-size:14px;');
