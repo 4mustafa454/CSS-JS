@@ -1,99 +1,4 @@
-//console.log(`Hello`);
-//console.log(`I like Apples`);
 
-//window.alert(`This is an alert!`);
-//window.alert(`I like oranges!`);
-
-//This is a comment
-//document.getElementById("myH1").textContent=`Hello`;
-//document.getElementById("myP").textContent = `I like Apple Juice`;
-
-/*
-  This is a comment
-*/
-/*
-let age = 25;
-console.log(`You are ${age} years old`);
-let gpa = 2.1;
-console.log(`Your gpa is ${gpa}`)
-console.log(typeof gpa);
-
-let email = "Bro 123@gmail.com"
-let firstName = "Bro";
-console.log(typeof firstName)
-console.log(firstName);
-
-
-let online = true;
-let age = 20;
-let forSale = true;
-let fullName = "Bro ChaCho";
-let isStudent = true;
-
-document.getElementById("p1").textContent =  `Your name is ${fullName}`;
-
-document.getElementById("p2").textContent = `You are ${age} years old`;
-
-document.getElementById("p3").textContent = online;
-
-//let students = 30;
-
-//students += 1;
-//students %= 3;
-//console.log(students)
-let username;
-document.getElementById("mySubmit").onclick = function(){
-         username = document.getElementById("myText").value;
-         document.getElementById("myH1").textContent = `Hello ${username}`;
-}            
-
-let age = window.prompt("How old are you?");
-age = Number(age);
-age+=1;
-
-console.log(age,typeof age);
-
-const PI = 3.14159;
-let radius;
-let circumference;
-
-
-
-
-document.getElementById("mySubmit").onclick = function(){
-  radius = document.getElementById("myText").value;
-  radius = Number(radius);
-  circumference = 2 * PI * radius;
-  document.getElementById("myH3").textContent = circumference + "cm";
-}
-
-const decreaseBtn = document.getElementById("decreaseBtn");
-const resetBtn = document.getElementById("resetBtn");
-const increaseBtn = document.getElementById("increaseBtn");
-const countLabel = document.getElementById("countLabel");
-let count = 0;
-
-increaseBtn.onclick = function(){
-  count++;
-  countLabel.textContent = count;
-}
-decreaseBtn.onclick = function(){
-  count--;
-  countLabel.textContent = count;
-}
-resetBtn.onclick = function(){
-  count = 0;
-  countLabel.textContent = count;
-}
-
-let x = 3.99;
-let y = 2;
-let z;
-
-//z = Math.round(x);
-z = Math.trunc(x);
-console.log(z);
-*/
 // ===== TAB NAVIGATION =====
 const tabBtns = document.querySelectorAll('.tab-btn');
 const pages = document.querySelectorAll('.page');
@@ -153,3 +58,57 @@ if (form) {
 // ===== CONSOLE FLAIR =====
 console.log('%c🔥 Jannimal Performance | BMW Specialists', 'color:#2563eb;font-size:18px;font-weight:bold;');
 console.log('%c📧 info@jannimalperformance.com', 'color:#888;font-size:14px;');
+function toggleVideo(element) {
+    const card = element.closest('.video-card') || element;
+    const img = card.querySelector('.video-thumbnail img');
+    const video = card.querySelector('.video-thumbnail video');
+    const playBtn = card.querySelector('.play-button-overlay');
+    const tag = card.querySelector('.video-tag');
+    
+    if (!video) return;
+    
+    // Check state using data attribute
+    const isPlaying = video.getAttribute('data-playing') === 'true';
+    
+    if (isPlaying) {
+        // PAUSE
+        video.pause();
+        video.currentTime = 0;
+        video.setAttribute('data-playing', 'false');
+        if (img) img.style.display = 'block';
+        if (playBtn) playBtn.style.display = 'flex';
+        if (tag) tag.style.display = 'block';
+        video.style.display = 'none';
+    } else {
+        // PLAY
+        video.setAttribute('data-playing', 'true');
+        if (img) img.style.display = 'none';
+        if (playBtn) playBtn.style.display = 'none';
+        if (tag) tag.style.display = 'none';
+        video.style.display = 'block';
+        video.play();
+    }
+}
+
+// ===== BOOKING FORM =====
+const bookingForm = document.getElementById('bookingForm');
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name')?.value.trim();
+        const email = document.getElementById('email')?.value.trim();
+        const car = document.getElementById('car')?.value.trim();
+        const service = document.getElementById('service')?.value;
+
+        if (!name || !email || !car || !service) {
+            alert('Please fill out all required fields (*)');
+            return;
+        }
+
+        bookingForm.style.display = 'none';
+        const success = document.getElementById('formSuccess');
+        if (success) success.style.display = 'block';
+    });
+}
+
+console.log('🔥 Jannimal Performance loaded!');
