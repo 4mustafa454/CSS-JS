@@ -641,6 +641,35 @@ footer {
 .instagram-link a i {
     font-size: 1.4rem;
 }
+/* ===== TIKTOK LINK ===== */
+.tiktok-link {
+    margin-top: 1rem;
+}
+
+.tiktok-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+}
+
+.tiktok-link a:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.tiktok-link a i {
+    font-size: 1.4rem;
+}
 /* ===== SHOP INFO (Hours + Location) ===== */
 .shop-info-grid {
     display: grid;
