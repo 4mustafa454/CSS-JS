@@ -318,9 +318,9 @@ nav {
 /* ===== WORK CARDS (Mixed Media) ===== */
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* was 320px */
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -340,7 +340,7 @@ nav {
 
 .work-image {
     position: relative;
-    height: 220px;
+    height: 300px; /* was 220px */
     overflow: hidden;
 }
 
