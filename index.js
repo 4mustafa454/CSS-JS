@@ -35,24 +35,7 @@ if (window.location.hash) {
     if (document.getElementById(id)) switchToPage(id);
 }
 
-// ===== BOOKING FORM =====
-const form = document.getElementById('bookingForm');
-if (form) {
-    form.addEventListener('submit', function(e) {
-        // Formspree handles the actual send
-        // We just show success message
-        const success = document.getElementById('formSuccess');
 
-        // Let Formspree do its thing, then show success
-        setTimeout(() => {
-            form.style.display = 'none';
-            if (success) success.style.display = 'block';
-        }, 500);
-
-        // Allow form to submit to Formspree
-        // Don't prevent default - Formspree needs the POST
-    });
-}
 
 
 // ===== CONSOLE FLAIR =====
@@ -67,11 +50,9 @@ function toggleVideo(element) {
     
     if (!video) return;
     
-    // Check state using data attribute
     const isPlaying = video.getAttribute('data-playing') === 'true';
     
     if (isPlaying) {
-        // PAUSE
         video.pause();
         video.currentTime = 0;
         video.setAttribute('data-playing', 'false');
@@ -80,7 +61,6 @@ function toggleVideo(element) {
         if (tag) tag.style.display = 'block';
         video.style.display = 'none';
     } else {
-        // PLAY
         video.setAttribute('data-playing', 'true');
         if (img) img.style.display = 'none';
         if (playBtn) playBtn.style.display = 'none';
@@ -88,6 +68,31 @@ function toggleVideo(element) {
         video.style.display = 'block';
         video.play();
     }
+}
+
+// Prevent clicks on the video itself (native controls: pause, seek, volume, etc.)
+// from bubbling up to the card and re-triggering toggleVideo.
+document.querySelectorAll('.video-card video').forEach(video => {
+    video.addEventListener('click', e => e.stopPropagation());
+
+    video.addEventListener('ended', () => {
+        resetToThumbnail(video.closest('.video-card'));
+    });
+});
+
+function resetToThumbnail(card) {
+    const img = card.querySelector('.work-image img');
+    const video = card.querySelector('.work-image video');
+    const playBtn = card.querySelector('.play-button-overlay');
+    const tag = card.querySelector('.video-tag');
+
+    video.pause();
+    video.currentTime = 0;
+    video.setAttribute('data-playing', 'false');
+    if (img) img.style.display = 'block';
+    if (playBtn) playBtn.style.display = 'flex';
+    if (tag) tag.style.display = 'block';
+    video.style.display = 'none';
 }
 
 // ===== BOOKING FORM =====
