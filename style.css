@@ -130,14 +130,14 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6)), url('images/m550i.jpeg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6)), url('images/m340igas.jpg');
+    background-size: cover;      /* was cover */
+    background-repeat: no-repeat;  /* new */
+    background-position: center 40%;
     background-attachment: fixed;
     padding: 0 1.5rem;
     position: relative;
 }
-
 .hero::before {
     content: '';
     position: absolute;
